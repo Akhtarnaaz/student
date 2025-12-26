@@ -15,16 +15,19 @@ def calculate_grade(avg):
         return "F"
 
 def main():
-    if len(sys.argv) != 7:
-        print("Usage: python student_grade.py <name> <department> <semester> <m1> <m2> <m3>")
+    if len(sys.argv) < 7:
+        print("Usage: python student.py <name> <department> <semester> <m1> <m2> <m3>")
         sys.exit(1)
 
     name = sys.argv[1]
-    department = sys.argv[2]
-    semester = sys.argv[3]
-    marks1 = int(sys.argv[4])
-    marks2 = int(sys.argv[5])
-    marks3 = int(sys.argv[6])
+
+    # Department may contain spaces
+    department = " ".join(sys.argv[2:-4])
+
+    semester = sys.argv[-4]
+    marks1 = int(sys.argv[-3])
+    marks2 = int(sys.argv[-2])
+    marks3 = int(sys.argv[-1])
 
     average = (marks1 + marks2 + marks3) / 3
     grade = calculate_grade(average)
@@ -38,3 +41,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

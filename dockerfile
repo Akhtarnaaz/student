@@ -1,6 +1,8 @@
-FROM python:3.11
-WORKDIR /student
+FROM python:3.14
+
+WORKDIR /Structured_enquiry
+
 COPY . .
-RUN pip install pytest
-ENTRYPOINT ["pytest"]
-CMD ["-v"]
+
+# Set student.py as the default command
+ENTRYPOINT ["python", "student.py"]

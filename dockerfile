@@ -3,4 +3,4 @@ WORKDIR /student
 COPY . .
 RUN pip install pytest
 ENTRYPOINT ["pytest"]
-CMD["-v"]
+CMD ["-v"]

@@ -1,8 +1,9 @@
-FROM python:3.14
+FROM python:3.12
 
 WORKDIR /Structured_enquiry
 
 COPY . .
 
-# Set student.py as the default command
+RUN pip install pytest
+
 ENTRYPOINT ["python", "student.py"]

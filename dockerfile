@@ -6,4 +6,4 @@ COPY . .
 
 RUN pip install pytest
 
-ENTRYPOINT ["python", "student.py"]
+CMD ["python", "student.py"]

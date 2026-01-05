@@ -30,7 +30,7 @@ class TestStudentGrade(unittest.TestCase):
         test_args = [
             "student.py",      # sys.argv[0] script name
             "Akhtarnaaz",       # Name
-            "BCA",             # Department
+            "Integrated MCA",             # Department
             "3",               # Semester
             "85",              # Marks1
             "78",              # Marks2
@@ -49,8 +49,8 @@ class TestStudentGrade(unittest.TestCase):
             # ✅ Check key content
             self.assertIn("GRADING CRITERIA", output)
             self.assertIn("STUDENT DETAILS", output)
-            self.assertIn("Name       : Rakshat J", output)
-            self.assertIn("Department : BCA", output)
+            self.assertIn("Name       : Akhtarnaaz", output)
+            self.assertIn("Department : Integrated MCA", output)
             self.assertIn("Semester   : 3", output)
             self.assertIn("Average    : 84.33", output)
             self.assertIn("Grade      : A", output)

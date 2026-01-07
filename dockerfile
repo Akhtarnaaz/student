@@ -1,9 +1,8 @@
-FROM python:3.12
-
-WORKDIR /Structured_enquiry
-
+FROM python:3.13
+WORKDIR /Structure_enquiry
 COPY . .
-
-RUN pip install pytest
-
+RUN pip install --no-cache-dir pytest
+# Run tests at build time (CI)
+RUN pytest
+# FIXED entrypoint (never replaced)
 ENTRYPOINT ["python", "student.py"]
